@@ -1,0 +1,41 @@
+package test;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.annotations.Test;
+
+public class login {
+WebDriver driver=null;
+	
+@Test
+public void logInToGmail() throws IOException
+{
+	Properties prop=new Properties();
+	FileInputStream file =new FileInputStream("C:\\Users\\Shyam\\workspace\\TestNGProject\\DataDriver.properties");
+	prop.load(file);
+	if(prop.getProperty("browser").equals("chrome"))
+	{
+		System.setProperty("webdriver.chrome.driver", "G:\\Learning\\Drivers\\chromedriver.exe");
+		driver=new ChromeDriver();		
+	}
+	else if (prop.getProperty("browser").equals("FireFox")){
+		
+	//"C:\Users\Shyam\Downloads\geckodriver-v0.21.0-win64\geckodriver.exe"
+	System.setProperty("webdriver.gecko.driver", "C:\\Users\\Shyam\\Downloads\\geckodriver-v0.21.0-win64\\geckodriver.exe");
+	driver=new FirefoxDriver();
+	}
+	else if (prop.getProperty("browser").equals("FireFox")){
+		
+		//"C:\Users\Shyam\Downloads\geckodriver-v0.21.0-win64\geckodriver.exe"
+		System.setProperty("webdriver.ie.driver", "C:\\Users\\Shyam\\Downloads\\geckodriver-v0.21.0-win64\\geckodriver.exe");
+		driver=new InternetExplorerDriver();
+		}
+}
+
+}

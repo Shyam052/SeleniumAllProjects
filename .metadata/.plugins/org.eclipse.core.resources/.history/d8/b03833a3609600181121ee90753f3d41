@@ -1,0 +1,22 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Login {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver","G:\\Learning\\Drivers\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://dev.camworkscloud.com/Account/Login?ReturnUrl=%2FDocuments");
+		driver.findElement(By.className("form-control")).sendKeys("shyam.ranganathan@hcl.com");
+		driver.findElement(By.name("Password")).sendKeys("Rapunzel@1994");
+		//driver.findElement(By.xpath("//*[@id='loginForm']/form/div[2]/div[3]/div[1]/input")).click();
+		driver.findElement(By.xpath("//*[@id='loginForm']/form/div[1]/img")).getScreenshotAs(null);
+	
+		
+
+	}
+
+}

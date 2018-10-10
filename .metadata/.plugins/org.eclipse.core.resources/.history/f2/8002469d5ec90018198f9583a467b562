@@ -1,0 +1,45 @@
+package objectrepository;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class Homepage {
+WebDriver driver;
+	
+	public Homepage(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+	
+	
+
+	By upload=By.xpath("//*[@id='landingPageApp']/div[1]/ui-view/cw-my-files/div/div[2]/div[1]/div/div/div[1]/div/div/div[2]/div/button/input");
+	By File= By.xpath("//*[@id='landingPageApp']/div[1]/ui-view/cw-my-files/div/div[2]/div[2]/div[1]/table/tbody/tr[2]/td[2]/a");
+	By Gcode=By.xpath("//*[@id='gm-toolbar']/div[1]/div[1]/div[10]/a/img");
+	By PartsDelete =By.xpath("//*[@class='glyphicon glyphicon-trash']");
+	public WebElement upload()
+	{
+		return driver.findElement(upload);
+	}
+	
+	public WebElement File()
+	{
+		return driver.findElement(File);
+	}
+
+	public WebElement Gcode()
+	{
+		return driver.findElement(Gcode);
+	}
+	
+	public WebElement PartsDelete()
+	{
+		return driver.findElement(PartsDelete);
+	}
+	
+
+	
+	
+	
+}

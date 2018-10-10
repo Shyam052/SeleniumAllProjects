@@ -1,0 +1,25 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class DropDownSelection {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.setProperty("webdriver.chrome.driver", "G:\\Learning\\Drivers\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://book.spicejet.com/?utm_source=Brand%20Campaign%20_&utm_medium=cpc_google&utm_term=O%26D&utm_campaign=Spicejet%20all%20route%20campaign&gclid=Cj0KCQjwnZXbBRC8ARIsABEYg6Dbs8JReFDk4qs0dlHgdy1a8OTV4-pG8qbIzqwzhD6GOwHpCj7CRKYaAiqrEALw_wcB");
+		driver.findElement(By.cssSelector("#ControlGroupSearchView_AvailabilitySearchInputSearchVieworiginStation1_CTXT")).click();
+		driver.findElement(By.cssSelector("a[text='Goa (GOI)']")).click();
+		driver.findElement(By.xpath("(//a[@value='BOM'])[2]")).click();
+		driver.findElement(By.cssSelector("a[class='ui-state-default']")).click();
+		driver.findElement(By.xpath("//div[@class='ui-datepicker-group ui-datepicker-group-first']//a[@class='ui-state-default'][contains(text(),'10')]")).click();
+		Select dropdown=new Select(driver.findElement(By.cssSelector("select[id='ControlGroupSearchView_AvailabilitySearchInputSearchView_DropDownListCurrency']")));
+		dropdown.selectByVisibleText("AED");
+		
+		
+	}
+
+}

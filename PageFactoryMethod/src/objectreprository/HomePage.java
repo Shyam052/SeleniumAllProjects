@@ -1,0 +1,52 @@
+package objectreprository;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class HomePage {
+WebDriver driver;
+public HomePage(WebDriver driver)
+{
+	this.driver=driver;
+	PageFactory.initElements(driver, this);
+}
+
+//@FindBy(xpath="//span[@class='glyphicon glyphicon-trash']")
+//WebElement delete;
+
+@FindBy(xpath="//span[@class='glyphicon glyphicon-trash']")
+WebElement delete;
+@FindBy(xpath="//*[@id='cw-msg-ok']")
+WebElement deleteConfirm;
+
+@FindBy(xpath="//*[@id='landingPageApp']/div[1]/ui-view/cw-my-files/div/div[2]/div[1]/div/div/div[1]/div/div/div[2]/div/button/input")
+WebElement uploadfile;
+
+@FindBy(xpath="//*[@id='landingPageApp']/div[1]/ui-view/cw-my-files/div/div[2]/div[2]/div[1]/table/tbody/tr[2]/td[2]/a")
+
+WebElement partlink;
+ 
+
+public WebElement delete()
+ {
+	 return delete;
+ }
+
+
+public WebElement deleteYes()
+ {
+	 return deleteConfirm;
+ }
+public WebElement uploadfile()
+{
+	 return uploadfile;
+}
+
+public WebElement partlink()
+{
+	 return partlink;
+}
+	
+}

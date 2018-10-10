@@ -1,0 +1,19 @@
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class QuationCode {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.setProperty("webdriver.chrome.driver", "G:\\Learning\\Drivers\\chromedriver.exe");
+		ChromeDriver driver=new ChromeDriver();
+		driver.get("https://paytm.com/");
+		System.out.println(driver.findElementByXPath("//div[@class='_3VXB']").isDisplayed());
+		driver.findElementByXPath("//input[@value='postpaid']").click();
+		System.out.println(driver.findElementByXPath("//div[@class='_3VXB']").isDisplayed());
+		
+		
+		
+		
+	}
+
+}

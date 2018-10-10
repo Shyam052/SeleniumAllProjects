@@ -1,0 +1,22 @@
+package testcases;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import objectrepository.LogInPage;
+
+public class LogInTestCasses {
+@Test
+public void cloudlogInPage()
+{
+	System.setProperty("webdriver.chrome.driver", "G:\\Learning\\Drivers\\chromedriver.exe");
+	WebDriver driver=new ChromeDriver();
+	LogInPage lp=new LogInPage();
+	driver.get("https://dev.camworkscloud.com/Account/Login?ReturnUrl=%2FDashboard");
+	lp.username().sendKeys("shyam.ranganathan@hcl.com");
+	lp.password().sendKeys("Rapunzel@1994");
+	lp.loginbutton().click();
+}
+
+}

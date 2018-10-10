@@ -1,0 +1,41 @@
+package objectreprository;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class CloudLogInPage {
+WebDriver driver;
+public CloudLogInPage(WebDriver driver)
+{
+	this.driver=driver;
+	PageFactory.initElements(driver, this);
+			
+}
+	
+	
+@FindBy(xpath="//*[@id='Email']")
+WebElement username;
+@FindBy(xpath="//*[@id='Password']")
+WebElement password;
+
+@FindBy(xpath="//*[@value='Log in']")
+WebElement login;
+
+public WebElement userName()
+{
+	return username;
+}
+
+public WebElement PassWord()
+{
+	return password;
+}
+
+public WebElement LogIn()
+{
+	return login;
+}
+
+}
